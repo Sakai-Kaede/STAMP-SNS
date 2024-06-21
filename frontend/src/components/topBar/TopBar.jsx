@@ -1,3 +1,5 @@
+import LoginIcon from '@mui/icons-material/Login';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import './TopBar.css'
 
 export default function TopBar() {
@@ -7,12 +9,12 @@ export default function TopBar() {
         <div className='logo'>STAMP SNS</div>
       </div>
       <div className='topBarCenter'>
-        <button className='post'>
-          <span className='postString'>🚀投稿する</span>
-        </button>
+        <div className='post'>🚀投稿する</div>
       </div>
       <div className='topBarRight'>
+        <AccountBoxIcon />
         <div>プロフィール</div>
+        <LoginIcon />
         <div>ログイン</div>
       </div>
     </div>
