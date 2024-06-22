@@ -1,7 +1,23 @@
-const router = require("express").Router();
+const router = require('express').Router();
+const multer = require('multer');
 
-router.get('/', (req, res) => {
-  res.send('upload router');
-});
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'public/images');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+})
+
+// 画像アップロード用API
+const upload = multer({ storage });
+router.post('/', upload.single('file'), (req, res) => {
+  try {
+    return res.status(200).json('画像アップロードに成功しました！')
+  } catch(err) {
+    console.log(err);
+  }
+})
 
 module.exports = router;
