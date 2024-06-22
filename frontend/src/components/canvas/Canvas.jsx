@@ -7,15 +7,17 @@ export default function Canvas() {
     const x = event.clientX;
     const y = event.clientY;
               
-    const img = document.createElement('img');
-    img.src = 'https://via.placeholder.com/50';
-    img.classList.add('image');
-    img.style.left = `${x - 25}px`;
-    img.style.top = `${y - 25}px`;
+    if(y >= 70) {
+      const img = document.createElement('img');
+      img.src = 'https://via.placeholder.com/50';
+      img.classList.add('image');
+      img.style.left = `${x - 50}px`;
+      img.style.top = `${y - 50}px`;
 
-    document.body.appendChild(img);
-              
-    images.push({ element: img, x: x, y: y });
+      document.body.appendChild(img);
+                
+      images.push({ element: img, x: x, y: y });
+      }
   });
 
   return (
