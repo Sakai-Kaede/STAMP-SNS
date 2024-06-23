@@ -18,27 +18,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default: '',
     },
-    coverPicture: {
-      type: String,
-      default: '',
-    },
-    followers: {
-      type: Array,
-      default: [],
-    },
-    following: {
-      type: Array,
-      default: [],
-    },
     // ログイン認証
     isAdmin: {
       type: Boolean,
       default: false,
-    },
-    // ユーザの説明欄
-    desc: {
-      type: String,
-      max: 50,
     },
   }, 
   { timestamps: true }
