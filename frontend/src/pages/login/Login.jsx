@@ -11,7 +11,7 @@ export default function Login() {
         <div className='loginRight'>
           <form className="loginBox">
             <p className='loginMsg'>ログインはこちら</p>
-            <input type="email" className='loginInput' placeholder='Eメール'/>
+            <input type="text" className='loginInput' placeholder='ユーザ名'/>
             <input type="password" className='loginInput' placeholder='パスワード'/>
             <button className='loginButton'>ログイン</button>
             <span className='loginForget'>パスワードを忘れた方へ</span>
