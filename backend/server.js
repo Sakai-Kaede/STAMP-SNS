@@ -7,7 +7,7 @@ const uploadRoute = require('./routes/upload');
 const postRoute = require('./routes/post');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const PORT = 3000;
+const PORT = 5000;
 
 mongoose
   .connect(process.env.MONGO_URL)
