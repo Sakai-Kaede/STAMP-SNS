@@ -4,6 +4,7 @@ const authRoute = require('./routes/auth');
 const userRoute = require('./routes/user');
 const profileRoute = require('./routes/profile');
 const uploadRoute = require('./routes/upload');
+const postRoute = require('./routes/post');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const PORT = 3000;
@@ -22,6 +23,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/user', userRoute);
 app.use('/api/profile', profileRoute);
 app.use('/api/upload', uploadRoute);
+app.use('/api/post', postRoute);
 
 app.listen(PORT, () => {
   console.log('サーバを起動');
