@@ -4,7 +4,7 @@ const authRoute = require('./routes/auth');
 const userRoute = require('./routes/user');
 const profileRoute = require('./routes/profile');
 const uploadRoute = require('./routes/upload');
-const postRoute = require('./routes/post');
+const postRoute = require('./routes/posts');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const PORT = 5000;
