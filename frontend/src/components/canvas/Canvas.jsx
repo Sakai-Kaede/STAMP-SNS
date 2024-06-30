@@ -10,7 +10,7 @@ export default function Canvas() {
 
     // ページが読み込まれたときに、スタンプを読み込む
     useEffect(() => {
-      const response = axios;
+      const response = axios.get('/posts/');
     }, []);
 
     const x = event.clientX;
