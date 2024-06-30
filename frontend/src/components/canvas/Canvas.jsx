@@ -10,7 +10,7 @@ export default function Canvas() {
   useEffect(() => {
     // useEffectの無名関数には、asyncがつけられない
     const fetchPosts = async () => {
-      const response = await axios.get('/posts/668175d1453cb58c7b48ff35');
+      const response = await axios.get('/posts');
       setPosts(response.data);
     }
     fetchPosts();
