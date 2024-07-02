@@ -20,7 +20,7 @@ mongoose
 
 app.use(express.json());
 app.use('/api/auth', authRoute);
-app.use('/api/user', userRoute);
+app.use('/api/users', userRoute);
 app.use('/api/profile', profileRoute);
 app.use('/api/upload', uploadRoute);
 app.use('/api/posts', postRoute);
