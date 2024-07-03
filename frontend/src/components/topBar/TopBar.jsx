@@ -17,7 +17,7 @@ export default function TopBar() {
       <div className='topBarRight'>
         <label className='shareOption' htmlFor='file'>
           <ImageIcon className='shareIcon' />
-          <div className='shareText'>写真を選択</div>
+          <div className='shareText'>スタンプ</div>
           <input 
             type="file" 
             id='file' 
@@ -25,9 +25,9 @@ export default function TopBar() {
             style={{display: 'none'}} 
             onChange={(e) => setFile(e.target.files[0])}/>
         </label>
-        <div className='profileOption'>
-          <AccountBoxIcon className='profileIcon'/>
-          <div className='profileText'>プロフィール</div>
+        <div className='settingOption'>
+          <AccountBoxIcon className='settingIcon'/>
+          <div className='settingText'>設定</div>
         </div>
         <div className='loginOption'>
           <LoginIcon className='loginIcon'/>
