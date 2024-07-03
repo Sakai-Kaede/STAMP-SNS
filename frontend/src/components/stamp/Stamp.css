@@ -1,0 +1,25 @@
+.stamp {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: lightblue;
+  object-fit: cover;
+}
+
+.username {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stampWrapper:hover .username {
+  opacity: 1;
+}

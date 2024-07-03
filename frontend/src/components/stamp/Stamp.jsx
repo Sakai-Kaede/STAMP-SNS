@@ -1,28 +1,39 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import './Stamp.css'
+import sampleImage from './sample.jpg';
 
 export default function Stamp({ post }) {
   const [user, setUser] = useState({});
 
   // ページが読み込まれたときに、スタンプを読み込む
   useEffect(() => {
-    // useEffectの無名関数には、asyncがつけられない
     const fetchUser = async () => {
       // PostスキーマのuserIdを取得
       const response = await axios.get(`/users/${post.userId}`);
       setUser(response.data);
     }
     fetchUser();
-  }, []);
+  }, [post.userId]);
+
+  // 加算を行うために数値に変換
+  const xPosition = Number(post.xPosition);
+  const yPosition = Number(post.yPosition);
 
   const stampStyle = {
-    position: "absolute",
-    left: `${300}px`,  // x座標をpxで指定
-    top: `${600}px`,   // y座標をpxで指定
-    border: "1px solid black",
-    padding: "10px",
-    backgroundColor: "lightblue",
+    left: `${xPosition}px`,
+    top: `${yPosition}px`,
+  };
+  const nameStyle = {
+    left: `${xPosition + 75}px`,
+    top: `${yPosition + 75}px`,
   };
 
-  return <div style={stampStyle}>Stamp</div>
+  return (
+    <div className="stampWrapper">
+      <img src={sampleImage} className="stamp" style={stampStyle}/>
+      <div className="username" style={nameStyle}>{user.username}</div>
+    </div>
+  )
 }
+
