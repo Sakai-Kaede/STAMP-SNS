@@ -50,3 +50,51 @@
   justify-content: space-around;
   color: white;
 }
+
+.shareOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.shareIcon {
+  margin-right: 5px;
+  font-size: 24px;
+}
+
+.shareText {
+  font-size: 16px;
+}
+
+.settingOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.settingIcon {
+  margin-right: 5px;
+  font-size: 24px;
+}
+
+.settingText {
+  font-size: 16px;
+}
+
+.loginOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.loginIcon {
+  margin-right: 5px;
+  font-size: 24px;
+}
+
+.loginText {
+  font-size: 16px;
+}
