@@ -14,10 +14,6 @@ const UserSchema = new mongoose.Schema(
       min: 8,
       max: 50,
     },
-    profilePicture: {
-      type: String,
-      default: '',
-    },
     // ログイン認証
     isAdmin: {
       type: Boolean,
