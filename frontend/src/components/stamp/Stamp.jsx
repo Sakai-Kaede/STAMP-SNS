@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import './Stamp.css'
-import sampleImage from './sample.jpg';
 
 export default function Stamp({ post }) {
   const [user, setUser] = useState({});
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
 
   // ページが読み込まれたときに、スタンプを読み込む
   useEffect(() => {
@@ -25,13 +25,13 @@ export default function Stamp({ post }) {
     top: `${yPosition}px`,
   };
   const nameStyle = {
-    left: `${xPosition + 75}px`,
-    top: `${yPosition + 75}px`,
+    left: `${xPosition + 50}px`,
+    top: `${yPosition + 50}px`,
   };
 
   return (
     <div className="stampWrapper">
-      <img src={sampleImage} className="stamp" style={stampStyle}/>
+      <img src={PUBLIC_FOLDER + post.img} className="stamp" style={stampStyle}/>
       <div className="username" style={nameStyle}>{user.username}</div>
     </div>
   )
