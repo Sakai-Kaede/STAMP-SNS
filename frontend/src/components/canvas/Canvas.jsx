@@ -11,6 +11,7 @@ export default function Canvas() {
     // useEffectの無名関数には、asyncがつけられない
     const fetchPosts = async () => {
       const response = await axios.get('/posts');
+      console.log(response.data)
       setPosts(response.data);
     }
     fetchPosts();
@@ -39,7 +40,7 @@ export default function Canvas() {
     <div className='canvas'>
       <div className='canvasWrapper'>
         {posts.map((post) => (
-          <Stamp post={post} key={post.id}/>
+          <Stamp post={post} key={post._id}/>
         ))}
       </div>
     </div>
