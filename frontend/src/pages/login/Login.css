@@ -25,7 +25,7 @@
   font-size: 50px;
   font-weight: 800;
   color: #41428b;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .loginDesc {
@@ -75,8 +75,9 @@
 
 .loginRegisterButton {
   height: 50px;
-  width: 50%;
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   border: none;
   background-color: #3c8d50;

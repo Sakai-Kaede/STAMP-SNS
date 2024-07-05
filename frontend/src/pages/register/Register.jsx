@@ -34,7 +34,9 @@ export default function Register() {
       <div className="registerWrapper">
         <div className='registerLeft'>
           <h3 className='registerLogo'>STAMP SNS</h3>
-          <span className='registerDesc'>好きな場所に、好きなスタンプを</span>
+          <span className='loginDesc'>好きな場所に</span>
+          <br />
+          <span className='loginDesc'>　好きなスタンプを</span>
         </div>
         <div className='registerRight'>
           <form className="registerBox" onSubmit={(e) => handleSubmit(e)}>

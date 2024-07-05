@@ -10,7 +10,7 @@
 }
 
 .topBarLeft {
-  flex: 4;
+  flex: 3;
 }
 
 .logo {
@@ -21,11 +21,11 @@
 }
 
 .topBarCenter {
-  flex: 5;
+  flex: 2.5;
 }
 
 .post {
-  width: 80%;
+  width: 60%;
   height: 20px;
   background-color: white;
   color: black;
