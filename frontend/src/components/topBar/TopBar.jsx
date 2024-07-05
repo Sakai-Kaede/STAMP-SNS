@@ -2,10 +2,13 @@ import LoginIcon from '@mui/icons-material/Login';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ImageIcon from '@mui/icons-material/Image';
 import './TopBar.css'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../state/AuthContext';
+import { Link } from 'react-router-dom';
 
 export default function TopBar() {
   const [file, setFile] = useState(null);
+  const {user} = useContext(AuthContext);
   return (
     <div className='topBarContainer'>
       <div className='topBarLeft'>
@@ -25,14 +28,18 @@ export default function TopBar() {
             style={{display: 'none'}} 
             onChange={(e) => setFile(e.target.files[0])}/>
         </label>
-        <div className='settingOption'>
-          <AccountBoxIcon className='settingIcon'/>
-          <div className='settingText'>設定</div>
-        </div>
-        <div className='loginOption'>
-          <LoginIcon className='loginIcon'/>
-          <div className='loginText'>ログイン</div>
-        </div>
+        <Link to='/setting' style={{textDecoration: 'none'}}>
+          <div className='settingOption'>
+            <AccountBoxIcon className='settingIcon'/>
+            <div className='settingText'>設定</div>
+          </div>
+        </Link>
+        <Link to="/login" style={{textDecoration: 'none'}}>
+          <div className='loginOption'>
+            <LoginIcon className='loginIcon'/>
+            <div className='loginText'>ログイン</div>
+          </div>
+        </Link>
       </div>
     </div>
   )

@@ -2,14 +2,12 @@ import { useContext, useRef } from 'react';
 import './Login.css'
 import { loginCall } from '../../actionCalls';
 import { AuthContext } from '../../state/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const username = useRef();
   const password = useRef();
   const {user, isFetching, error, dispatch} = useContext(AuthContext);
-
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,12 +20,6 @@ export default function Login() {
     );
   };
 
-  const handleRegisterClick = () => {
-    navigate('/register');
-  };
-
-  console.log(user);
-
   return (
     
 
@@ -35,7 +27,9 @@ export default function Login() {
       <div className="loginWrapper">
         <div className='loginLeft'>
           <h3 className='loginLogo'>STAMP SNS</h3>
-          <span className='loginDesc'>好きな場所に、好きなスタンプを</span>
+          <span className='loginDesc'>好きな場所に</span>
+          <br />
+          <span className='loginDesc'>　好きなスタンプを</span>
         </div>
         <div className='loginRight'>
           <form className="loginBox" onSubmit={(e) => handleSubmit(e)}>
@@ -55,7 +49,10 @@ export default function Login() {
               ref={password}
             />
             <button className='loginButton'>ログイン</button>
-            <button className='loginRegisterButton' onClick={handleRegisterClick}>アカウント作成</button>
+            <Link to='/register' style={{textDecoration: 'none'}}>
+              <div className='loginRegisterButton'>アカウント作成</div>
+            </Link>
+            
           </form>
         </div>
       </div>
