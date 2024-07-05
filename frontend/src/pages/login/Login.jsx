@@ -2,11 +2,14 @@ import { useContext, useRef } from 'react';
 import './Login.css'
 import { loginCall } from '../../actionCalls';
 import { AuthContext } from '../../state/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const username = useRef();
   const password = useRef();
   const {user, isFetching, error, dispatch} = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,9 +22,15 @@ export default function Login() {
     );
   };
 
+  const handleRegisterClick = () => {
+    navigate('/register');
+  };
+
   console.log(user);
 
   return (
+    
+
     <div className='login'>
       <div className="loginWrapper">
         <div className='loginLeft'>
@@ -46,7 +55,7 @@ export default function Login() {
               ref={password}
             />
             <button className='loginButton'>ログイン</button>
-            <button className='loginRegisterButton'>アカウント作成</button>
+            <button className='loginRegisterButton' onClick={handleRegisterClick}>アカウント作成</button>
           </form>
         </div>
       </div>
