@@ -119,7 +119,9 @@ export default function TopBar() {
         <Link to="/login" style={{ textDecoration: 'none' }}>
           <div className='loginOption'>
             <LoginIcon className='loginIcon' />
-            <div className='loginText'>ログイン</div>
+            <div className='loginText'>
+              {user && user._id ? 'ログイン中' : 'ログイン'}
+            </div>
           </div>
         </Link>
       </div>
