@@ -36,22 +36,20 @@ export default function TopBar() {
       img: file ? `${Date.now()}${file.name}` : 'like.png',
     };
 
-    if (file) {
-      const data = new FormData();
-      const fileName = newPost.img;
-      data.append('name', fileName);
-      data.append('file', file);
-
-      try {
-        // 画像APIを叩く
-        await axios.post('/upload', data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
+    const data = new FormData();
+    const fileName = newPost.img;
+    data.append('name', fileName);
+    data.append('file', file);
 
     try {
       await axios.post('/posts', newPost);
+    } catch (err) {
+      console.log(err);
+    }
+
+    try {
+      // 画像APIを叩く
+      await axios.post('/upload', data);
     } catch (err) {
       console.log(err);
     }
