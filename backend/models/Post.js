@@ -8,7 +8,6 @@ const StampSchema = new mongoose.Schema(
     },
     img: {
       type: String,
-      required: true,
     },
     xPosition: {
       type: String,

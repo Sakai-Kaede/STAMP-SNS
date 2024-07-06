@@ -19,7 +19,7 @@ mongoose
     console.log(err);
   });
 
-app.use('/images', express.static(path.json(__dirname, 'public/images')));
+  app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
