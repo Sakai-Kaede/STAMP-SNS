@@ -8,6 +8,7 @@ const postRoute = require('./routes/posts');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const PORT = 5000;
+const path = require('path');
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -18,6 +19,7 @@ mongoose
     console.log(err);
   });
 
+app.use('/images', express.static(path.json(__dirname, 'public/images')));
 app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
