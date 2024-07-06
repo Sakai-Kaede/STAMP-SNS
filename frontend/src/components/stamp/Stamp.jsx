@@ -28,11 +28,18 @@ export default function Stamp({ post }) {
     left: `${xPosition + 50}px`,
     top: `${yPosition + 50}px`,
   };
+  const truncateUsername = (username) => {
+    if (!username) return '';
+    if (username.length > 8) {
+      return username.slice(0, 8) + '...';
+    }
+    return username;
+  };
 
   return (
     <div className="stampWrapper">
       <img src={PUBLIC_FOLDER + post.img} className="stamp" style={stampStyle}/>
-      <div className="username" style={nameStyle}>{user.username}</div>
+      <div className="username" style={nameStyle}>{truncateUsername(user.username)}</div>
     </div>
   )
 }
