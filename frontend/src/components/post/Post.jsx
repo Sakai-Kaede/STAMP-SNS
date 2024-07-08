@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../state/AuthContext';
 import axios from 'axios';
 
-export default function Share({ coordinates, file }) {
+export default function Post({ coordinates, file }) {
   const { user } = useContext(AuthContext);
 
   // スタンプを投稿する
