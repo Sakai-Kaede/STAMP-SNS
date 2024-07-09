@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Post from '../post/Post';
 import PreStamp from '../preStamp/PreStamp';
+import Update from '../update/Update';
 
 export default function TopBar() {
   const [file, setFile] = useState(null);
@@ -32,6 +33,7 @@ export default function TopBar() {
             onChange={(e) => setFile(e.target.files[0])}
           />
         </label>
+        <Update />
         <Link to='/setting' style={{ textDecoration: 'none' }}>
           <div className='settingOption'>
             <AccountBoxIcon className='settingIcon' />

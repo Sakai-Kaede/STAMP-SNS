@@ -1,0 +1,15 @@
+.updateOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.updateIcon {
+  margin-right: 5px;
+  font-size: 24px;
+}
+
+.updateText {
+  font-size: 16px;
+}
