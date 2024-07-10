@@ -1,17 +1,14 @@
 import './PreStamp.css';
 import { useEffect } from 'react';
+import { images, clearImages } from '../../utils/images';
 
 export default function PreStamp({ setCoordinates, file }) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
 
   // 投稿前のスタンプを表示する
   useEffect(() => {
-    let images = [];
-
     const handleClick = (event) => {
-      images.forEach((imgObj) => {
-        imgObj.element.remove();
-      });
+      clearImages();
 
       const x = event.clientX;
       const y = event.clientY;
@@ -25,7 +22,7 @@ export default function PreStamp({ setCoordinates, file }) {
 
         document.body.appendChild(img);
 
-        images = [{ element: img, x: x, y: y }];
+        images.push({ element: img, x: x, y: y });
 
         setCoordinates({ x, y });
       }
@@ -38,8 +35,5 @@ export default function PreStamp({ setCoordinates, file }) {
     };
   }, [file]);
 
-  return (
-    <>
-    </>
-  );
+  return null;
 }
