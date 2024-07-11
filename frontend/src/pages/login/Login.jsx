@@ -1,13 +1,19 @@
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import './Login.css'
 import { loginCall } from '../../actionCalls';
 import { AuthContext } from '../../state/AuthContext';
 import { Link } from 'react-router-dom';
+import { images, clearImages } from '../../utils/images';
 
 export default function Login() {
   const username = useRef();
   const password = useRef();
   const {user, isFetching, error, dispatch} = useContext(AuthContext);
+
+  // 画面移動時に画面上に残ったスタンプを削除する
+  useEffect(() => {
+    clearImages();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +27,6 @@ export default function Login() {
   };
 
   return (
-    
-
     <div className='login'>
       <div className="loginWrapper">
         <div className='loginLeft'>

@@ -1,7 +1,8 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './Register.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { images, clearImages } from '../../utils/images';
 
 export default function Register() {
   const username = useRef();
@@ -9,6 +10,11 @@ export default function Register() {
   const passwordConfirmation = useRef();
 
   const navigate = useNavigate();
+
+  // 画面移動時に画面上に残ったスタンプを削除する
+  useEffect(() => {
+    clearImages();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

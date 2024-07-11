@@ -1,8 +1,9 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../../state/AuthContext';
 import './Setting.css';
 import { Link } from 'react-router-dom';
+import { images, clearImages } from '../../utils/images';
 
 export default function Setting() {
   const { user } = useContext(AuthContext);
@@ -11,6 +12,11 @@ export default function Setting() {
   const { dispatch } = useContext(AuthContext);
 
   const [message, setMessage] = useState('');
+
+  // 画面移動時に画面上に残ったスタンプを削除する
+  useEffect(() => {
+    clearImages();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
