@@ -29,6 +29,10 @@ export default function PreStamp({ setCoordinates, file }) {
     };
 
     document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
   }, [file]);
 
   return null;
