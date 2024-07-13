@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import './Stamp.css'
 
+// ### 問題 ### LoginやSettingコンポーネントでもPreStampが有効になってしまっている
 export default function Stamp({ post }) {
   const [user, setUser] = useState({});
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
