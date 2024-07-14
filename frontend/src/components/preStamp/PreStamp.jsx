@@ -28,9 +28,17 @@ export default function PreStamp({ setCoordinates, file }) {
       }
     };
 
-    document.addEventListener('click', handleClick);
+    // ### 問題 ### 
+    // 設定ページから戻るボタンを押したとき、クリックした位置にスタンプが押されてしまう
+    
+    // コンポーネント読み込み後、僅かな時間クリックを無効化することで対処した
+    // もっと良い方法があるかも
+    const timer = setTimeout(() => {
+      document.addEventListener('click', handleClick);
+    }, 100);
 
     return () => {
+      clearTimeout(timer);
       document.removeEventListener('click', handleClick);
     };
   }, [file]);
